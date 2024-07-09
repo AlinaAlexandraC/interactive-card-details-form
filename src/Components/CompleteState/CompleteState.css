@@ -1,0 +1,27 @@
+.complete-state-container {
+    width: 400px;
+    height: 100vh;
+    margin-right: 50px;
+}
+
+.thank-you {
+    color: #1b0728;
+    font-weight: 600;
+}
+
+.confirmation-message {
+    color: #827f86;
+    font-size: 15px;
+}
+
+.confirm-button {
+    background-color: #220930;
+    border-radius: 7px;
+    width: 100%;
+}
+
+.confirm-button:hover {
+    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 20px;
+    transition-duration: .1s;
+    cursor: pointer;
+}

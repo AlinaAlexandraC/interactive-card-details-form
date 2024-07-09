@@ -1,0 +1,148 @@
+.card-frontside-details {
+    width: 447px;
+    height: 245px;
+}
+
+.logo {
+    margin-left: 48px;
+}
+
+.card-number-container {
+    width: 447px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    margin-top: 48px;
+    margin-left: 48px;
+}
+
+.card-number {
+    font-size: 30px;
+    font-weight: 800px;
+    word-spacing: 5px;
+}
+
+.details-container {
+    width: 380px;
+    margin-left: 48px;
+}
+
+.cardholder-name,
+.expiry-date {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+@media only screen and (max-width: 950px) {
+    .details-container {
+        width: 310px;
+        margin-top: 15px;
+        margin-left: 35px;
+    }
+
+    .logo {
+        margin-left: 35px;
+    }
+
+    .card-number-container {
+        margin-top: 10px;
+        margin-left: 35px;
+    }
+
+    .card-number {
+        font-size: 25px;
+    }
+
+    .cardholder-name,
+    .expiry-date {
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .details-container {
+        width: 260px;
+        margin-top: 5px;
+    }
+
+    .logo {
+        margin-left: 35px;
+    }
+
+    .card-number-container {
+        margin-top: 5px;
+        margin-left: 35px;
+    }
+
+    .card-number {
+        font-size: 20px;
+    }
+
+    .cardholder-name,
+    .expiry-date {
+        font-size: 13px;
+        font-weight: 400;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .card-frontside-container {
+        bottom: 0;
+        translate: 5px -110px;
+    }
+
+    .details-container {
+        width: 310px;
+        margin-top: 15px;
+        margin-left: 35px;
+    }
+
+    .logo {
+        margin-left: 35px;
+    }
+
+    .card-number-container {
+        margin-top: 10px;
+        margin-left: 35px;
+    }
+
+    .card-number {
+        font-size: 25px;
+    }
+
+    .cardholder-name,
+    .expiry-date {
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .card-frontside-container {
+        translate: 10px -150px;
+    }
+
+    .details-container {
+        width: 260px;
+        margin-top: 5px;
+    }
+
+    .logo {
+        margin-left: 35px;
+    }
+
+    .card-number-container {
+        margin-top: 5px;
+        margin-left: 35px;
+    }
+
+    .card-number {
+        font-size: 20px;
+    }
+
+    .cardholder-name,
+    .expiry-date {
+        font-size: 13px;
+        font-weight: 400;
+    }
+}

@@ -1,0 +1,105 @@
+.card-details-container {
+    width: 400px;
+    height: 100vh;
+    margin-right: 50px;
+}
+
+input {
+    width: 100%;
+    height: 45px;
+    border-radius: 7px;
+    border: solid 1.5px #dedede;
+    outline: none;
+    user-select: none;
+}
+
+input:focus {
+    background: linear-gradient(white, white) padding-box,
+        linear-gradient(to right, darkblue, darkorchid) border-box;
+    border-radius: 7px;
+    border: 1.5px solid transparent;
+}
+
+.expiry-date-container {
+    width: 70%;
+}
+
+.expiry-month,
+.expiry-year {
+    display: flex;
+    justify-content: start;
+    width: 95%;
+}
+
+label {
+    color: black;
+    font-size: 10px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+/* TODO: align placeholder to be centered vertically */
+::placeholder {
+    font-size: 20px;
+    text-align: start;
+    text-indent: 10px;
+}
+
+.confirm-button {
+    background-color: #220930;
+    border-radius: 7px;
+}
+
+.confirm-button:hover {
+    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 20px;
+    transition-duration: .1s;
+    cursor: pointer;
+}
+
+.label-error {
+    color: red;
+    display: flex;
+    font-size: 12px;
+}
+
+#remember-card {
+    width: 15px;
+}
+
+.remember-card-label {
+    font-size: 15px;
+}
+
+.expiry-date-input-label::before {
+    content: "EXPIRY DATE (MM/YY)";
+}
+
+@media only screen and (max-width: 950px) {
+    .card-details-container {
+        margin-right: 25px;
+    }
+
+    ::placeholder {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .card-details-container {
+        margin-right: 20px;
+    }
+
+    .expiry-date-input-label::before {
+        content: "EXPIRY DATE";
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .card-details-container {
+        height: 550px;
+        width: 350px;
+        position: absolute;
+        translate: 0 100px;
+        margin-right: 0;
+    }
+}
