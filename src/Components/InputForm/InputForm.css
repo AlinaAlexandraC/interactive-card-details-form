@@ -85,7 +85,7 @@ label {
 
 @media only screen and (max-width: 576px) {
     .card-details-container {
-        height: 450px;
+        height: 400px;
         width: 350px;
         position: absolute;
         translate: 0 100px;

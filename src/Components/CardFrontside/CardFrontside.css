@@ -119,12 +119,12 @@
 
 @media only screen and (max-width: 560px) {
     .card-frontside-container {
-        translate: 10px -150px;
+        translate: 10px -90px;
     }
 
     .details-container {
-        width: 260px;
-        margin-top: 5px;
+        width: 230px;
+        margin-top: 0;
     }
 
     .logo {
@@ -132,7 +132,7 @@
     }
 
     .card-number-container {
-        margin-top: 5px;
+        margin-top: 0;
         margin-left: 35px;
     }
 
