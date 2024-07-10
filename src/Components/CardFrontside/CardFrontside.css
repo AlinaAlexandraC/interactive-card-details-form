@@ -119,7 +119,7 @@
 
 @media only screen and (max-width: 560px) {
     .card-frontside-container {
-        translate: 10px -90px;
+        translate: -20px -100px;
     }
 
     .details-container {

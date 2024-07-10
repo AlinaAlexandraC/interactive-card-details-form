@@ -43,7 +43,7 @@
 @media only screen and (max-width: 560px) {
     .card-backside-container {
         bottom: 0;
-        translate: 80px -190px;
+        translate: 50px -200px;
     }
 
     .card-backside-details {
