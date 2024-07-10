@@ -14,14 +14,12 @@
     font-size: 15px;
 }
 
-.confirm-button {
-    background-color: #220930;
-    border-radius: 7px;
-    width: 100%;
-}
-
-.confirm-button:hover {
-    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 20px;
-    transition-duration: .1s;
-    cursor: pointer;
+@media only screen and (max-width: 576px) {
+    .complete-state-container {
+        height: 550px;
+        width: 350px;
+        position: absolute;
+        translate: 0 60px;
+        margin-right: 0;
+    }
 }

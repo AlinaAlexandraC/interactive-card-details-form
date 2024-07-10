@@ -27,8 +27,17 @@
   width: 37%;
 }
 
-.card-sides {
-  width: 650px;
+.hero-btn {
+  background-color: #220930;
+  border-radius: 7px;
+  color: white;
+  width: 100%;
+}
+
+.hero-btn:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 20px;
+  transition-duration: .1s;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 950px) {

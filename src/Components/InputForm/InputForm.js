@@ -1,9 +1,11 @@
 import "./InputForm.css";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
-const CardNumberForm = () => {
-    const [inputValue, setInputValue] = useState("");
+const InputForm = () => {
+    const navigate = useNavigate();
     const [cardNumber, setCardNumber] = useState("");
+    const [cardholderName, setCardholderName] = useState("");
     const [expiryMonth, setExpiryMonth] = useState("");
     const [expiryYear, setExpiryYear] = useState("");
     const [cvc, setCvc] = useState("");
@@ -11,10 +13,22 @@ const CardNumberForm = () => {
     const [expiryMonthError, setExpiryMonthError] = useState(false);
     const [expiryYearError, setExpiryYearError] = useState(false);
     const [cvcError, setCvcError] = useState(false);
+    const [cardNumberArray, setCardNumberArray] = useState([0, 0, 0, 0, '\u00A0', 0, 0, 0, 0, '\u00A0', 0, 0, 0, 0, '\u00A0', 0, 0, 0, 0]);
 
-    const handleInputChange = (event) => {
-        setInputValue(event.target.value);
-        localStorage.setItem("inputValue", inputValue);
+    const interactiveCardDetails = () => {
+        let arrayIndex = 0;
+        const newArray = cardNumberArray.map(item => {
+            if (item === 0 && arrayIndex < cardNumber.length) {
+                return cardNumber[arrayIndex++];
+            }
+            return item;
+        });
+
+        localStorage.setItem("cardNumberArray", newArray);
+        localStorage.setItem("cardholderName", cardholderName);
+        localStorage.setItem("expiryMonth", expiryMonth);
+        localStorage.setItem("expiryYear", expiryYear);
+        localStorage.setItem("cvc", cvc);
     };
 
     const validateField = (value, setError) => {
@@ -32,6 +46,11 @@ const CardNumberForm = () => {
         validateField(expiryMonth, setExpiryMonthError);
         validateField(expiryYear, setExpiryYearError);
         validateField(cvc, setCvcError);
+
+        if (cardNumberError === "" && expiryMonthError === "" && expiryYearError === "" && cvcError === "") {
+            navigate('/complete');
+            interactiveCardDetails();
+        }
     };
 
     const getBorderStyle = (error) => (
@@ -53,7 +72,7 @@ const CardNumberForm = () => {
                         type="text"
                         className="cardholder-name-input text-center"
                         placeholder="e.g. Jane Appleseed"
-                        onChange={handleInputChange}
+                        onChange={(e) => setCardholderName(e.target.value)}
                     />
                 </div>
                 <div className="card-number-input-container d-flex flex-column pb-3">
@@ -86,6 +105,7 @@ const CardNumberForm = () => {
                                     onChange={(e) => setExpiryMonth(e.target.value)}
                                     style={getBorderStyle(expiryMonthError)}
                                     onClick={() => resetError(setExpiryMonthError)}
+                                    maxLength="2"
                                 />
                                 {expiryMonthError && (
                                     <div className="label-error">{expiryMonthError}</div>
@@ -99,6 +119,7 @@ const CardNumberForm = () => {
                                     onChange={(e) => setExpiryYear(e.target.value)}
                                     style={getBorderStyle(expiryYearError)}
                                     onClick={() => resetError(setExpiryYearError)}
+                                    maxLength="2"
                                 />
                                 {expiryYearError && (
                                     <div className="label-error">{expiryYearError}</div>
@@ -117,6 +138,7 @@ const CardNumberForm = () => {
                             onChange={(e) => setCvc(e.target.value)}
                             style={getBorderStyle(cvcError)}
                             onClick={() => resetError(setCvcError)}
+                            maxLength="3"
                         />
                         {cvcError && (
                             <div className="label-error">{cvcError}</div>
@@ -125,14 +147,14 @@ const CardNumberForm = () => {
                 </div>
             </div>
             <div className="check-remember-card d-flex align-content-center pb-4 pt-3">
-                <input type="checkbox" id="remember-card" name="remember-card"/>
+                <input type="checkbox" id="remember-card" name="remember-card" />
                 <label for="remember-card" className="remember-card-label px-3 pb-0 d-flex flex-wrap align-content-center">Remember card</label>
             </div>
-            <div className="confirm-button p-2" onClick={handleConfirm}>
+            <div className="confirm-button hero-btn p-2" onClick={handleConfirm}>
                 Confirm
             </div>
         </div>
     );
 };
 
-export default CardNumberForm;
+export default InputForm;

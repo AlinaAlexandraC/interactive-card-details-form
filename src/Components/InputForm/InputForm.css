@@ -45,17 +45,6 @@ label {
     text-indent: 10px;
 }
 
-.confirm-button {
-    background-color: #220930;
-    border-radius: 7px;
-}
-
-.confirm-button:hover {
-    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 20px;
-    transition-duration: .1s;
-    cursor: pointer;
-}
-
 .label-error {
     color: red;
     display: flex;
@@ -96,7 +85,7 @@ label {
 
 @media only screen and (max-width: 576px) {
     .card-details-container {
-        height: 550px;
+        height: 450px;
         width: 350px;
         position: absolute;
         translate: 0 100px;

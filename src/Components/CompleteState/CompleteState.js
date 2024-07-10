@@ -1,6 +1,11 @@
 import "./CompleteState.css";
+import { Link } from 'react-router-dom';
 
 const CompleteState = () => {
+    const resetCardInfo = () => {
+        localStorage.clear();
+    }
+
     return (
         <div className="complete-state-container d-flex flex-column justify-content-center align-items-center">
             <div className="complete-image">
@@ -10,9 +15,11 @@ const CompleteState = () => {
                 <div className="thank-you pt-4 pb-2">THANK YOU!</div>
                 <div className="confirmation-message pb-4">We've added your card details</div>
             </div>
-            <div className="confirm-button p-2 mt-3">
-                Continue
-            </div>
+            <Link to='/' className="hero-btn text-decoration-none mt-3">
+                <div className="confirm-button p-2" onClick={resetCardInfo}>
+                    Continue
+                </div>
+            </Link>
         </div>
     );
 };
